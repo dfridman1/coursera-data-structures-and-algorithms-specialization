@@ -33,8 +33,7 @@ def dfs_contains_cycle(graph, v, visited):
         return True
     visited[v].color = Color.GREY
     for child in graph[v]:
-        t = dfs_contains_cycle(graph, child, visited)
-        if t:
+        if dfs_contains_cycle(graph, child, visited):
             return True
     visited[v].color = Color.BLACK
     return False
